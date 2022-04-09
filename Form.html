@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            margin: 0;
+            padding: 0;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+  <h1>HTML form </h1>
+  <form action="">
+  <div>
+      <label for="text">Enter your name</label>
+       <input type="text" id="name" name="fname">
+       <error-out class="text-error" for=""></error-out>
+    </div> 
+    <div><label for="pwd">Enter your password</label>
+        <input type="password" id="pwd" name="pwd">
+    </div>
+    <div>
+        <label for="email">Enter your email id</label>
+       <input type="email" id="email" name="email">
+       
+    </div>
+    <div>
+        <label for="url">Enter your url</label>
+       <input type="url" id="url" name="url">
+       
+    </div>
+    <div>
+        <label for="phonenumber">Enter your phone number</label>
+       <input type="tel" id="phonenumber" name="phonenumber">
+       
+    </div>
+    <div>
+        <label for="search">Enter your searching word</label>
+       <input type="search" id="search" name="search">
+       
+    </div>
+    <div>
+        <label for="salary">Choose your salary</label>
+       <input type="range" name="salary" id="salary" min="30000" max="100000"
+       step="100" value="100000">
+       <output class="salary-output" for="salary">400000</output>
+    </div>
+    <div>
+        <button>submit</button>
+    </div>
+  </form>
+</body>
+</html>
