@@ -22,7 +22,8 @@
        <error-output class="text-error" for="text"></error-output>
     </div> 
     <div><label for="pwd">Enter your password</label>
-        <input type="password" id="pwd" name="pwd">
+        <input type="password" id="password" name="password">
+        <error-output class="password-error" for="pwd"></error-output>
     </div>
     <div>
         <label for="email">Enter your email id</label>
@@ -44,6 +45,11 @@
        <input type="search" id="search" name="search">
        
     </div>
+    <div class="nativeDateTimePicker">
+        <label for="startDate">Choose a date and time: </label>
+        <input type="datetime-local" id="startDate" name="satrtDate">
+        
+    </div>
     <div>
         <label for="salary">Choose your salary</label>
        <input type="range" name="salary" id="salary" min="30000" max="50000"
@@ -51,7 +57,7 @@
        <output class="salary-output" for="salary">40000</output>
     </div>
     <div>
-        <button>search</button>
+        <button>submit</button>
     </div>
   </form>
   <script>
@@ -70,7 +76,7 @@
       // This code is for email validation
         const email = document.querySelector('#email');
         const emailError = document.querySelector('.email-error');
-        text.addEventListener('input', function () {
+        email.addEventListener('input', function () {
             let emailRegex = RegExp('[a-zA-z0-9]+[a-zA-Z0-9-_[+]?]*[.]?[a-zA-Z0-9-_[+]?]+@[a-zA-Z0-9]+([.][a-zA-Z]{2,}){1,2}');
             if (emailRegex.test(email.value)) {
                 emailError.textContent="";
@@ -82,7 +88,7 @@
          // This code is for phonenumber validation
          const tel = document.querySelector('#tel');
         const telError = document.querySelector('.tel-error');
-        text.addEventListener('input', function () {
+        tel.addEventListener('input', function () {
             let telRegex = RegExp('[91 ][0-9]{10}');
             if (telRegex.test(tel.value)) {
                 telError.textContent="";
@@ -91,9 +97,25 @@
             }
         });
         
-  
+  // This code is for password validation
+  const password = document.querySelector('#password');
+        const pwdError = document.querySelector('.password-error');
+        pwd.addEventListener('input', function () {
+            let passwordRegex = RegExp('(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[#!@%&])[a-zA-Z0-9].{8,}');
+            if (passwordRegex.test(pwd.value)) {
+                passwordError.textContent="";
+            } else {
+                passwordError.textContent = "password is incorrect";
+            }
+        });
 
+        const salary = document.querySelector('#salary');
+        const output = document.querySelector('.salary-output');
+        output.textContent = salary.value;
+        salary.addEventListener('input', function () {
+            output.textContent = salary.value;
+        })
   </script>
 </body>
-
+</body>
 </html>
