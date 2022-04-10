@@ -35,9 +35,9 @@
        
     </div>
     <div>
-        <label for="phonenumber">Enter your phone number</label>
-       <input type="tel" id="phonenumber" name="phonenumber">
-       
+        <label for="tel">Enter your phone number</label>
+       <input type="tel" id="tel" name="tel">
+       <error-output class="tel-error" for="tel"></error-output>
     </div>
     <div>
         <label for="search">Enter your searching word</label>
@@ -78,10 +78,22 @@
                 emailError.textContent = "Email is incorrect";
             }
         });
+
+         // This code is for phonenumber validation
+         const tel = document.querySelector('#tel');
+        const telError = document.querySelector('.tel-error');
+        text.addEventListener('input', function () {
+            let telRegex = RegExp('[91 ][0-9]{10}');
+            if (telRegex.test(tel.value)) {
+                telError.textContent="";
+            } else {
+                telError.textContent = "phone number is incorrect";
+            }
+        });
         
   
 
   </script>
 </body>
-</body>
+
 </html>
