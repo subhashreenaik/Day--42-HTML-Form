@@ -27,7 +27,7 @@
     <div>
         <label for="email">Enter your email id</label>
        <input type="email" id="email" name="email">
-       
+       <error-output class="email-error" for="email"></error-output>
     </div>
     <div>
         <label for="url">Enter your url</label>
@@ -56,7 +56,7 @@
   </form>
   <script>
       
-
+    // This code is for name validation
       const text = document.querySelector('#text');
         const textError = document.querySelector('.text-error');
         text.addEventListener('input', function () {
@@ -67,7 +67,18 @@
                 textError.textContent = "Name is incorrect";
             }
         });
-      
+      // This code is for email validation
+        const email = document.querySelector('#email');
+        const emailError = document.querySelector('.email-error');
+        text.addEventListener('input', function () {
+            let emailRegex = RegExp('[a-zA-z0-9]+[a-zA-Z0-9-_[+]?]*[.]?[a-zA-Z0-9-_[+]?]+@[a-zA-Z0-9]+([.][a-zA-Z]{2,}){1,2}');
+            if (emailRegex.test(email.value)) {
+                emailError.textContent="";
+            } else {
+                emailError.textContent = "Email is incorrect";
+            }
+        });
+        
   
 
   </script>
